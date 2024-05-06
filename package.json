@@ -1,0 +1,19 @@
+{
+  "name": "giftogram",
+  "version": "1.0.0",
+  "description": "giftogram assessment",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --watch index.js"
+  },
+  "author": "Andrew De Stefano",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.7"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
