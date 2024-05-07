@@ -77,7 +77,8 @@ export const viewMessages = async (user1, user2) => {
     const user2Verified = await verifyUser(user2);
 
     if(user1Verified.length && user2Verified.length){
-        const query = '(SELECT message_id, sender_user_id, message, epoch FROM messages WHERE sender_user_id = ? OR receiver_user_id = ?) INTERSECT (SELECT message_id, sender_user_id, message, epoch FROM messages WHERE sender_user_id = ? OR receiver_user_id = ?) ORDER BY epoch ASC';
+        // const query = '(SELECT message_id, sender_user_id, message, epoch FROM messages WHERE sender_user_id = ? OR receiver_user_id = ?) INTERSECT (SELECT message_id, sender_user_id, message, epoch FROM messages WHERE sender_user_id = ? OR receiver_user_id = ?) ORDER BY epoch ASC';
+        const query = 'SELECT message_id, sender_user_id, message, epoch FROM messages WHERE (sender_user_id = ? OR receiver_user_id = ?) AND (sender_user_id = ? OR receiver_user_id = ?) ORDER BY epoch ASC';
         const queryParams = [user1, user1, user2, user2];
 
         try{
